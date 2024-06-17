@@ -1,0 +1,31 @@
+---
+title: "Legacy theming with bslib and thematic"
+output: 
+  html_document:
+    code_folding: show
+    theme:
+      bg: "#202123"
+      fg: "#B8BCC2"
+      primary: "#EA80FC"
+      base_font:
+        google: Prompt
+      heading_font:
+        google: Proza Libre
+      version: 3
+---
+
+```{r setup, include=FALSE}
+if (requireNamespace("thematic")) 
+  thematic::thematic_rmd(font = "auto")
+```
+
+
+```{r}
+# Create vectors containing metadata for the samples
+genotype <-c("wt","wt","wt","wt","wt","wt","wt")
+condition <-c("normal","fibrosis","normal","fibrosis","normal","fibrosis","fibrosis")
+
+# Combine vectors into a data frame
+wt_metadata <- data.frame(genotype, wildtype)
+rownames(wt_metadata)<-c("wt_normal3","wt_fibrosis3","wt_normal1","wt_fibrosis2","wt_normal2","wt_fibrosis4","wt_fibrosis1")
+```
