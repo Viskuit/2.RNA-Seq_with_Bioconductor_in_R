@@ -1,0 +1,1 @@
+![Expression problem Smoc2](./img/Smoc2_expression_RNA-seq.png)

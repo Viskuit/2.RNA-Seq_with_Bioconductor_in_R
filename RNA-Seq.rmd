@@ -19,13 +19,18 @@ if (requireNamespace("thematic"))
   thematic::thematic_rmd(font = "auto")
 ```
 
+![Expression of Smoc2](./img/smoc2_expression.png)
 
 ```{r}
-# Create vectors containing metadata for the samples
-genotype <-c("wt","wt","wt","wt","wt","wt","wt")
-condition <-c("normal","fibrosis","normal","fibrosis","normal","fibrosis","fibrosis")
+# Create genotype vector
+genotype <- c(rep("smoc2_oe", 7))
 
-# Combine vectors into a data frame
-wt_metadata <- data.frame(genotype, wildtype)
-rownames(wt_metadata)<-c("wt_normal3","wt_fibrosis3","wt_normal1","wt_fibrosis2","wt_normal2","wt_fibrosis4","wt_fibrosis1")
+# Create condition vector
+condition <- c(rep("fibrosis",4), rep("normal",3))
+
+# Create data frame
+smoc2_metadata <- data.frame(genotype, condition)
+
+# Assign the row names of the data frame
+rownames(smoc2_metadata) <- c(paste0("smoc2_fibrosis", 1:4), paste0("smoc2_normal", c(1,3,4)))
 ```
